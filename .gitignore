@@ -1,0 +1,26 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# Firebase & Deployment Cache
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Temporary / OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+
+.day_tracker
+post_day.ps1
