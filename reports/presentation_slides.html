@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accident Severity Flagger - Academic Presentation Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --accent-blue: #38bdf8;
+      --accent-cyan: #2dd4bf;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-gold: #fbbf24;
+      --alert-red: #ef4444;
+      --success-green: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: 'Outfit', sans-serif;
+      padding: 30px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .slide-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+    .slide-header {
+      margin-bottom: 25px;
+    }
+    .slide-num {
+      color: var(--accent-cyan);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .slide-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-top: 5px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    .sub-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .sub-card h3 {
+      font-size: 1.2rem;
+      color: var(--text-gold);
+      margin-bottom: 12px;
+    }
+    .formula-box {
+      background: #020617;
+      border-left: 4px solid var(--accent-blue);
+      padding: 12px 16px;
+      font-family: 'Space Grotesk', monospace;
+      color: var(--accent-blue);
+      font-size: 1.05rem;
+      border-radius: 0 8px 8px 0;
+      margin: 10px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    th {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent-cyan);
+      font-size: 0.95rem;
+    }
+    tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+    .highlight-green { color: var(--success-green); font-weight: 700; }
+    .highlight-blue { color: var(--accent-blue); font-weight: 700; }
+    .highlight-gold { color: var(--text-gold); font-weight: 700; }
+    .plot-img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: #000;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .btn-download:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div>
+        <h1>Accident Severity Flagger — Project-I Presentation</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Student: <strong>Kunche Abhishek</strong> | Second Year (Sem 1) | Reference: <a href="https://mark999-143.web.app" target="_blank" style="color: var(--accent-cyan);">mark999-143.web.app</a></p>
+      </div>
+      <div>
+        <a href="../Accident_Severity_Flagger_Presentation.pptx" class="btn-download" download>
+          📥 Download PPTX Deck (16:9)
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 1 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 1 — Executive Title</div>
+        <h2 class="slide-title">Accident Severity Flagger for UK Road Safety Officers</h2>
+      </div>
+      <div class="sub-card" style="border-left: 4px solid var(--accent-cyan);">
+        <p style="font-size: 1.15rem; margin-bottom: 10px;">A full-stack data science & software engineering intelligence system that evaluates 101,525 national collision records to prioritize high-risk road conditions under tight municipal budgets.</p>
+        <div class="grid-3" style="margin-top: 15px;">
+          <div><strong style="color: var(--text-gold);">Candidate:</strong> Kunche Abhishek</div>
+          <div><strong style="color: var(--text-gold);">Course:</strong> Second Year Sem 1 (Project-I)</div>
+          <div><strong style="color: var(--text-gold);">Live Deployment:</strong> <a href="https://mark999-143.web.app" target="_blank" style="color: var(--accent-blue);">mark999-143.web.app</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 2 — The Problem & Council Reality</div>
+        <h2 class="slide-title">Operational Context & The Top-K Budget Constraint</h2>
+      </div>
+      <div class="grid-2">
+        <div class="sub-card">
+          <h3>The Local Council Dilemma</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted);">
+            <li><strong style="color: var(--text-white);">Strict Capacity:</strong> Council safety teams can only fund ~20–30 interventions per year (speed cameras, junction redesigns, friction surfacing, lighting).</li>
+            <li><strong style="color: var(--text-white);">Flawed Heuristics:</strong> Traditional approaches rely on raw complaint volume or gross crash numbers without isolating fatality severity.</li>
+            <li><strong style="color: var(--text-white);">High Cost of Inefficiency:</strong> Wasting budget on slight scratches while leaving lethal road traps unfunded.</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h3 style="color: var(--accent-cyan);">The Data-Driven Solution</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted);">
+            <li><strong style="color: var(--text-white);">Binary Severity Target:</strong> 1 = Severe (Fatal/Serious), 0 = Slight.</li>
+            <li><strong style="color: var(--text-white);">Precision@K Optimization:</strong> Prioritizes top candidates directly matching annual intervention budget (K = 25).</li>
+            <li><strong style="color: var(--text-white);">Bayesian Multipliers:</strong> Quantifies risk relative to national baseline (26.24%).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 3 — Dataset & Features</div>
+        <h2 class="slide-title">STATS19 Dataset & Feature Engineering</h2>
+      </div>
+      <div class="grid-4" style="margin-bottom: 20px;">
+        <div class="sub-card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent-blue);">101,525</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Total Collisions</div>
+        </div>
+        <div class="sub-card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 700; color: var(--alert-red);">26.24%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Severe Prior Rate</div>
+        </div>
+        <div class="sub-card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 700; color: var(--success-green);">73.76%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Slight Collisions</div>
+        </div>
+        <div class="sub-card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 700; color: var(--text-gold);">5 Core</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Environmental Features</div>
+        </div>
+      </div>
+      <div class="sub-card">
+        <h3>Feature Breakdown</h3>
+        <p><strong style="color: var(--accent-blue);">1. Road Type:</strong> Single carriageway (73%), Dual carriageway (14.4%), Roundabout (6.7%), One-way street (2.4%), Slip road (1.6%).</p>
+        <p><strong style="color: var(--accent-blue);">2. Weather:</strong> Fine no high winds (82.1%), Raining (10.1%), Raining + high winds (0.9%), Fog/mist (0.3%).</p>
+        <p><strong style="color: var(--accent-blue);">3. Light Conditions:</strong> Daylight (71.7%), Darkness lit (20.4%), Darkness no lighting (5.6% - 36.3% severe rate!).</p>
+        <p><strong style="color: var(--accent-blue);">4. Junction Detail:</strong> Not at junction (44.6%), T/staggered junction (27.8%), Crossroads & mini-roundabouts (9.3%).</p>
+        <p><strong style="color: var(--accent-blue);">5. Speed Limit:</strong> 20, 30, 40, 50, 60, 70 mph posted zones.</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 4 — Mathematical Foundations I</div>
+        <h2 class="slide-title">Chi-Square (χ²) Test of Independence & Cramér's V</h2>
+      </div>
+      <div class="grid-2">
+        <div class="sub-card">
+          <h3>Chi-Square (χ²) Independence Test</h3>
+          <p>Evaluates whether collision severity is independent of environmental factors:</p>
+          <div class="formula-box">χ² = Σ [ (O_ij - E_ij)² / E_ij ]</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Where E_ij = (Row_i × Col_j) / N. df = (r - 1)(c - 1).</p>
+          <ul style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+            <li><strong style="color: var(--text-white);">Weather:</strong> χ² = 321.55, df = 8, p = 1.06 × 10⁻⁶⁴</li>
+            <li><strong style="color: var(--text-white);">Light:</strong> χ² = 340.38, df = 4, p = 2.09 × 10⁻⁷²</li>
+            <li><strong style="color: var(--text-white);">Road Type:</strong> χ² = 607.13, df = 5, p = 5.82 × 10⁻¹²⁹</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h3 style="color: var(--accent-cyan);">Cramér's V Effect Size</h3>
+          <p>Normalizes test statistic into [0, 1] to reflect actual associative magnitude:</p>
+          <div class="formula-box">V = sqrt( χ² / (N × min(r - 1, c - 1)) )</div>
+          <ul style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">
+            <li><strong style="color: var(--text-white);">Road Type:</strong> V = 0.0773 (Strongest geographical determinant)</li>
+            <li><strong style="color: var(--text-white);">Light:</strong> V = 0.0579 (Significant nocturnal hazard shift)</li>
+            <li><strong style="color: var(--text-white);">Weather:</strong> V = 0.0563 (Rain/snow/fog elevated risk)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 5 — Mathematical Foundations II</div>
+        <h2 class="slide-title">Bayesian Conditional Risk & Multipliers</h2>
+      </div>
+      <div class="sub-card">
+        <h3>Prior-to-Posterior Updating</h3>
+        <div class="formula-box">P(Severe | X) = Count(Severe ∩ X) / Count(X)</div>
+        <div class="formula-box">Risk Multiplier (R) = P(Severe | X) / P(Severe)</div>
+        <p style="margin-top: 12px; color: var(--text-muted);">Where baseline prior P(Severe) = 26.24%. A multiplier R > 1.0 flags excessive danger conditions:</p>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+          <li><strong style="color: var(--alert-red);">Dual Carriageway + Rain + High Winds + Lights Lit (30 mph):</strong> P(Severe|X) = 60.0% → <span class="highlight-gold">Risk Multiplier = 2.29x</span></li>
+          <li><strong style="color: var(--alert-red);">Dual Carriageway + Fine + Darkness with No Lighting (60 mph):</strong> P(Severe|X) = 58.06% → <span class="highlight-gold">Risk Multiplier = 2.21x</span></li>
+          <li><strong style="color: var(--alert-red);">Single Carriageway + Fine + Darkness Unlit (60 mph):</strong> P(Severe|X) = 50.0% → <span class="highlight-gold">Risk Multiplier = 1.91x</span></li>
+          <li><strong style="color: var(--success-green);">Roundabout + Daylight (20 mph):</strong> P(Severe|X) = 15.74% → <span class="highlight-green">Risk Multiplier = 0.60x (Safest)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 6 — Mathematical Foundations III & IV</div>
+        <h2 class="slide-title">Budget Precision@K & 1,000-Sample Bootstrapping</h2>
+      </div>
+      <div class="grid-2">
+        <div class="sub-card">
+          <h3>Precision@K & Recall@K</h3>
+          <div class="formula-box">Precision@K = [ Σ_{i ∈ Top K} y_i ] / K</div>
+          <div class="formula-box">Recall@K = [ Σ_{i ∈ Top K} y_i ] / [ Σ_{all} y_j ]</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Directly aligns model evaluation with real council capacity (K = 25 road interventions).</p>
+        </div>
+        <div class="sub-card">
+          <h3 style="color: var(--accent-cyan);">Bootstrapped 95% Confidence Intervals</h3>
+          <div class="formula-box">CI_95% = [ Q*(2.5%), Q*(97.5%) ]</div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Performs B = 1,000 resamples with replacement on test predictions to establish empirical statistical certainty bounds.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 7 — Benchmark Results</div>
+        <h2 class="slide-title">Model Performance Comparison (K = 25 Interventions)</h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Model / Benchmark</th>
+            <th>Architecture Type</th>
+            <th>ROC-AUC</th>
+            <th>Precision@25</th>
+            <th>95% Bootstrapped CI</th>
+            <th>Recall@25</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Baseline 1: Majority Class</td>
+            <td>Non-ML</td>
+            <td>0.5000</td>
+            <td>44.0%</td>
+            <td>[8.0%, 44.1%]</td>
+            <td>0.21%</td>
+          </tr>
+          <tr>
+            <td>Baseline 2: Group-By Road Type</td>
+            <td>Non-ML</td>
+            <td>0.5415</td>
+            <td>32.0%</td>
+            <td>[12.0%, 48.0%]</td>
+            <td>0.15%</td>
+          </tr>
+          <tr style="background: rgba(56, 189, 248, 0.08);">
+            <td><strong>Logistic Regression (Balanced)</strong></td>
+            <td>Linear ML</td>
+            <td class="highlight-blue">0.5881 (Top AUC)</td>
+            <td>32.0%</td>
+            <td>[16.0%, 56.0%]</td>
+            <td>0.15%</td>
+          </tr>
+          <tr style="background: rgba(16, 185, 129, 0.08);">
+            <td><strong>AdaBoost Classifier</strong></td>
+            <td>Ensemble ML</td>
+            <td>0.5679</td>
+            <td class="highlight-green">40.0% (Top Precision)</td>
+            <td>[19.9%, 56.0%]</td>
+            <td>0.19%</td>
+          </tr>
+          <tr>
+            <td>Bagging Classifier (Trees)</td>
+            <td>Ensemble ML</td>
+            <td>0.5834</td>
+            <td>36.0%</td>
+            <td>[12.0%, 48.0%]</td>
+            <td>0.17%</td>
+          </tr>
+          <tr>
+            <td>Decision Tree (Depth=8)</td>
+            <td>Tree ML</td>
+            <td>0.5801</td>
+            <td>20.0%</td>
+            <td>[8.0%, 40.0%]</td>
+            <td>0.09%</td>
+          </tr>
+          <tr>
+            <td>Naive Bayes (GaussianNB)</td>
+            <td>Bayesian ML</td>
+            <td>0.5747</td>
+            <td>24.0%</td>
+            <td>[15.9%, 52.0%]</td>
+            <td>0.11%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 8 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 8 — Exploratory Plots</div>
+        <h2 class="slide-title">Visualizations & Publication Charts</h2>
+      </div>
+      <div class="grid-3">
+        <div>
+          <img src="visualizations/severity_distribution.png" class="plot-img" alt="Severity Distribution">
+          <p style="text-align: center; color: var(--accent-blue); font-size: 0.9rem; margin-top: 8px;">Severity Distribution</p>
+        </div>
+        <div>
+          <img src="visualizations/weather_light_heatmap.png" class="plot-img" alt="Risk Heatmap">
+          <p style="text-align: center; color: var(--text-gold); font-size: 0.9rem; margin-top: 8px;">Weather × Light Risk Heatmap</p>
+        </div>
+        <div>
+          <img src="visualizations/speed_limit_risk_distribution.png" class="plot-img" alt="Speed Limit Risk">
+          <p style="text-align: center; color: var(--alert-red); font-size: 0.9rem; margin-top: 8px;">Speed Limit Hazard Curve</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 9 — Live Reference & Dashboard</div>
+        <h2 class="slide-title">Live Production Reference: mark999-143.web.app</h2>
+      </div>
+      <div class="grid-2">
+        <div class="sub-card">
+          <h3>Web Application Capabilities</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted);">
+            <li><strong style="color: var(--text-white);">Dynamic Classifier Switcher:</strong> Live dropdown allowing officers to switch between Logistic Regression, AdaBoost, Bagging, Decision Tree, and Naive Bayes.</li>
+            <li><strong style="color: var(--text-white);">Plotly Interactive Gauge:</strong> Color-coded real-time risk indicator (Low, Moderate, High, Critical).</li>
+            <li><strong style="color: var(--text-white);">Historical Evidence:</strong> Querying exact counts of historical fatal, serious, and slight collisions.</li>
+            <li><strong style="color: var(--text-white);">SHAP Drivers:</strong> Explaining which factors positively or negatively altered risk.</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h3 style="color: var(--accent-cyan);">Intervention & Committee Tools</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted);">
+            <li><strong style="color: var(--text-white);">Council Shortlist Slider:</strong> Real-time K budget slider (5 to 50 interventions) ranking UK hazardous combinations.</li>
+            <li><strong style="color: var(--text-white);">Instant CSV Export:</strong> 1-click export of prioritized candidate roads for council committees.</li>
+            <li><strong style="color: var(--text-white);">Audit History:</strong> SQL persistence logging every query with timestamp and prediction.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <div class="slide-num">Slide 10 — Outcomes & Viva Takeaways</div>
+        <h2 class="slide-title">Summary of Project Deliverables & Academic Merit</h2>
+      </div>
+      <div class="sub-card" style="border-left: 4px solid var(--success-green);">
+        <ul style="padding-left: 20px; color: var(--text-white); font-size: 1.05rem;">
+          <li style="margin-bottom: 8px;"><strong style="color: var(--accent-cyan);">Big Data Handling:</strong> 101,525 official DfT records analyzed without leakage.</li>
+          <li style="margin-bottom: 8px;"><strong style="color: var(--accent-cyan);">Statistical Depth:</strong> Full Chi-Square contingency testing, Cramér's V, Bayesian priors/posteriors, and 1,000 bootstrap iterations.</li>
+          <li style="margin-bottom: 8px;"><strong style="color: var(--accent-cyan);">Machine Learning Depth:</strong> 5 ML classifiers benchmarked against 2 non-ML baselines under class imbalance.</li>
+          <li style="margin-bottom: 8px;"><strong style="color: var(--accent-cyan);">Budget Realism:</strong> Precision@K metric directly solving municipal intervention constraints.</li>
+          <li style="margin-bottom: 8px;"><strong style="color: var(--accent-cyan);">Engineering Excellence:</strong> Flask API, SQLite ORM persistence, 15 Pytest tests (100% pass rate), and live cloud deployment at <a href="https://mark999-143.web.app" target="_blank" style="color: var(--accent-blue);">mark999-143.web.app</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

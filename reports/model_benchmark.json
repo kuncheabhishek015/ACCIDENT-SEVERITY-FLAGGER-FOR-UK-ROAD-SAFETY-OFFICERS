@@ -1,0 +1,366 @@
+{
+  "Baseline 1: Majority Class": {
+    "model_name": "Baseline 1: Majority Class",
+    "accuracy": 0.7376,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "roc_auc": 0.5,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.45,
+        "precision_at_k_percent": 45.0,
+        "precision_at_k_ci95": [
+          0.1,
+          0.5013
+        ],
+        "recall_at_k": 0.0017,
+        "recall_at_k_percent": 0.17,
+        "recall_at_k_ci95": [
+          0.0004,
+          0.0019
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.44,
+        "precision_at_k_percent": 44.0,
+        "precision_at_k_ci95": [
+          0.08,
+          0.441
+        ],
+        "recall_at_k": 0.0021,
+        "recall_at_k_percent": 0.21,
+        "recall_at_k_ci95": [
+          0.0004,
+          0.0021
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.4,
+        "precision_at_k_percent": 40.0,
+        "precision_at_k_ci95": [
+          0.1325,
+          0.4333
+        ],
+        "recall_at_k": 0.0023,
+        "recall_at_k_percent": 0.23,
+        "recall_at_k_ci95": [
+          0.0007,
+          0.0025
+        ]
+      }
+    }
+  },
+  "Baseline 2: Group-By Road Type": {
+    "model_name": "Baseline 2: Group-By Road Type",
+    "accuracy": 0.4182,
+    "precision": 0.2828,
+    "recall": 0.7923,
+    "f1_score": 0.4168,
+    "roc_auc": 0.5415,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.35,
+        "precision_at_k_percent": 35.0,
+        "precision_at_k_ci95": [
+          0.1,
+          0.5
+        ],
+        "recall_at_k": 0.0013,
+        "recall_at_k_percent": 0.13,
+        "recall_at_k_ci95": [
+          0.0004,
+          0.0018
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.32,
+        "precision_at_k_percent": 32.0,
+        "precision_at_k_ci95": [
+          0.12,
+          0.48
+        ],
+        "recall_at_k": 0.0015,
+        "recall_at_k_percent": 0.15,
+        "recall_at_k_ci95": [
+          0.0006,
+          0.0023
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.3333,
+        "precision_at_k_percent": 33.33,
+        "precision_at_k_ci95": [
+          0.1,
+          0.4342
+        ],
+        "recall_at_k": 0.0019,
+        "recall_at_k_percent": 0.19,
+        "recall_at_k_ci95": [
+          0.0006,
+          0.0025
+        ]
+      }
+    }
+  },
+  "Logistic Regression": {
+    "model_name": "Logistic Regression",
+    "accuracy": 0.5427,
+    "precision": 0.3078,
+    "recall": 0.5947,
+    "f1_score": 0.4057,
+    "roc_auc": 0.5881,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.35,
+        "precision_at_k_percent": 35.0,
+        "precision_at_k_ci95": [
+          0.2,
+          0.65
+        ],
+        "recall_at_k": 0.0013,
+        "recall_at_k_percent": 0.13,
+        "recall_at_k_ci95": [
+          0.0007,
+          0.0024
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.32,
+        "precision_at_k_percent": 32.0,
+        "precision_at_k_ci95": [
+          0.16,
+          0.56
+        ],
+        "recall_at_k": 0.0015,
+        "recall_at_k_percent": 0.15,
+        "recall_at_k_ci95": [
+          0.0008,
+          0.0026
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.3333,
+        "precision_at_k_percent": 33.33,
+        "precision_at_k_ci95": [
+          0.2,
+          0.5333
+        ],
+        "recall_at_k": 0.0019,
+        "recall_at_k_percent": 0.19,
+        "recall_at_k_ci95": [
+          0.0011,
+          0.003
+        ]
+      }
+    }
+  },
+  "Decision Tree": {
+    "model_name": "Decision Tree",
+    "accuracy": 0.6331,
+    "precision": 0.3315,
+    "recall": 0.3914,
+    "f1_score": 0.359,
+    "roc_auc": 0.5801,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.2,
+        "precision_at_k_percent": 20.0,
+        "precision_at_k_ci95": [
+          0.05,
+          0.4
+        ],
+        "recall_at_k": 0.0008,
+        "recall_at_k_percent": 0.08,
+        "recall_at_k_ci95": [
+          0.0002,
+          0.0015
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.2,
+        "precision_at_k_percent": 20.0,
+        "precision_at_k_ci95": [
+          0.08,
+          0.4
+        ],
+        "recall_at_k": 0.0009,
+        "recall_at_k_percent": 0.09,
+        "recall_at_k_ci95": [
+          0.0004,
+          0.0019
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.2,
+        "precision_at_k_percent": 20.0,
+        "precision_at_k_ci95": [
+          0.0667,
+          0.3667
+        ],
+        "recall_at_k": 0.0011,
+        "recall_at_k_percent": 0.11,
+        "recall_at_k_ci95": [
+          0.0004,
+          0.0021
+        ]
+      }
+    }
+  },
+  "Bagging Classifier": {
+    "model_name": "Bagging Classifier",
+    "accuracy": 0.6303,
+    "precision": 0.3314,
+    "recall": 0.4014,
+    "f1_score": 0.363,
+    "roc_auc": 0.5834,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.35,
+        "precision_at_k_percent": 35.0,
+        "precision_at_k_ci95": [
+          0.1,
+          0.4513
+        ],
+        "recall_at_k": 0.0013,
+        "recall_at_k_percent": 0.13,
+        "recall_at_k_ci95": [
+          0.0004,
+          0.0017
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.36,
+        "precision_at_k_percent": 36.0,
+        "precision_at_k_ci95": [
+          0.12,
+          0.48
+        ],
+        "recall_at_k": 0.0017,
+        "recall_at_k_percent": 0.17,
+        "recall_at_k_ci95": [
+          0.0006,
+          0.0023
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.3,
+        "precision_at_k_percent": 30.0,
+        "precision_at_k_ci95": [
+          0.1658,
+          0.4667
+        ],
+        "recall_at_k": 0.0017,
+        "recall_at_k_percent": 0.17,
+        "recall_at_k_ci95": [
+          0.0009,
+          0.0026
+        ]
+      }
+    }
+  },
+  "AdaBoost Classifier": {
+    "model_name": "AdaBoost Classifier",
+    "accuracy": 0.7376,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "roc_auc": 0.5679,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.4,
+        "precision_at_k_percent": 40.0,
+        "precision_at_k_ci95": [
+          0.15,
+          0.6
+        ],
+        "recall_at_k": 0.0015,
+        "recall_at_k_percent": 0.15,
+        "recall_at_k_ci95": [
+          0.0006,
+          0.0022
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.4,
+        "precision_at_k_percent": 40.0,
+        "precision_at_k_ci95": [
+          0.199,
+          0.56
+        ],
+        "recall_at_k": 0.0019,
+        "recall_at_k_percent": 0.19,
+        "recall_at_k_ci95": [
+          0.0009,
+          0.0026
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.4333,
+        "precision_at_k_percent": 43.33,
+        "precision_at_k_ci95": [
+          0.1992,
+          0.5333
+        ],
+        "recall_at_k": 0.0024,
+        "recall_at_k_percent": 0.24,
+        "recall_at_k_ci95": [
+          0.0011,
+          0.003
+        ]
+      }
+    }
+  },
+  "Naive Bayes": {
+    "model_name": "Naive Bayes",
+    "accuracy": 0.3804,
+    "precision": 0.2804,
+    "recall": 0.8686,
+    "f1_score": 0.4239,
+    "roc_auc": 0.5747,
+    "metrics_at_k": {
+      "K_20": {
+        "precision_at_k": 0.25,
+        "precision_at_k_percent": 25.0,
+        "precision_at_k_ci95": [
+          0.1488,
+          0.55
+        ],
+        "recall_at_k": 0.0009,
+        "recall_at_k_percent": 0.09,
+        "recall_at_k_ci95": [
+          0.0006,
+          0.0021
+        ]
+      },
+      "K_25": {
+        "precision_at_k": 0.24,
+        "precision_at_k_percent": 24.0,
+        "precision_at_k_ci95": [
+          0.159,
+          0.52
+        ],
+        "recall_at_k": 0.0011,
+        "recall_at_k_percent": 0.11,
+        "recall_at_k_ci95": [
+          0.0007,
+          0.0024
+        ]
+      },
+      "K_30": {
+        "precision_at_k": 0.2333,
+        "precision_at_k_percent": 23.33,
+        "precision_at_k_ci95": [
+          0.1667,
+          0.5008
+        ],
+        "recall_at_k": 0.0013,
+        "recall_at_k_percent": 0.13,
+        "recall_at_k_ci95": [
+          0.0009,
+          0.0029
+        ]
+      }
+    }
+  }
+}

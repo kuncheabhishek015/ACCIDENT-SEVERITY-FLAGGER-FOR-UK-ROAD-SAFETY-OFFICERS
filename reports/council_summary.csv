@@ -1,0 +1,31 @@
+rank,road_type,weather_condition,light_condition,speed_limit,total_collisions,severe_collisions,severe_risk_rate_percent,risk_multiplier
+1,Dual carriageway,Raining + high winds,Darkness - lights lit,30 mph,15,9,60.0,2.29
+2,Dual carriageway,Fine no high winds,Darkness - no lighting,60 mph,31,18,58.06,2.21
+3,Single carriageway,Fine no high winds,Darkness - lights unlit,60 mph,32,16,50.0,1.91
+4,Single carriageway,Raining + high winds,Darkness - lights lit,20 mph,40,19,47.5,1.81
+5,Single carriageway,Snowing no high winds,Darkness - lights lit,30 mph,28,13,46.43,1.77
+6,Single carriageway,Fine no high winds,Darkness - lighting unknown,50 mph,26,12,46.15,1.76
+7,Dual carriageway,Fine no high winds,Darkness - no lighting,40 mph,18,8,44.44,1.69
+8,Single carriageway,Fine no high winds,Darkness - no lighting,50 mph,366,156,42.62,1.62
+9,Single carriageway,Fine no high winds,Darkness - no lighting,60 mph,2034,852,41.89,1.6
+10,Single carriageway,Fine + high winds,Darkness - lights lit,20 mph,34,14,41.18,1.57
+11,Dual carriageway,Fine + high winds,Daylight,40 mph,17,7,41.18,1.57
+12,Single carriageway,Fine no high winds,Darkness - lights unlit,40 mph,32,13,40.62,1.55
+13,Dual carriageway,Unknown,Daylight,20 mph,30,12,40.0,1.52
+14,Dual carriageway,Other,Darkness - lights lit,70 mph,15,6,40.0,1.52
+15,Roundabout,Fine + high winds,Daylight,30 mph,15,6,40.0,1.52
+16,Single carriageway,Raining no high winds,Darkness - lights lit,60 mph,48,19,39.58,1.51
+17,Single carriageway,Raining + high winds,Daylight,20 mph,38,15,39.47,1.5
+18,Single carriageway,Raining + high winds,Daylight,40 mph,23,9,39.13,1.49
+19,One way street,Fine no high winds,Darkness - lighting unknown,20 mph,18,7,38.89,1.48
+20,Single carriageway,Fine no high winds,Daylight,60 mph,7081,2714,38.33,1.46
+21,Single carriageway,Fine no high winds,Darkness - lights lit,50 mph,134,50,37.31,1.42
+22,Single carriageway,Fine + high winds,Daylight,30 mph,160,59,36.88,1.41
+23,Dual carriageway,Snowing no high winds,Daylight,70 mph,19,7,36.84,1.4
+24,Single carriageway,Fine + high winds,Daylight,60 mph,79,29,36.71,1.4
+25,Single carriageway,Fog or mist,Daylight,60 mph,30,11,36.67,1.4
+26,Single carriageway,Raining no high winds,Darkness - no lighting,60 mph,457,166,36.32,1.38
+27,Dual carriageway,Other,Daylight,70 mph,37,13,35.14,1.34
+28,Single carriageway,Fine no high winds,Darkness - no lighting,40 mph,385,134,34.81,1.33
+29,Single carriageway,Raining no high winds,Darkness - lights lit,40 mph,136,47,34.56,1.32
+30,Single carriageway,Fine no high winds,Daylight,50 mph,1744,600,34.4,1.31

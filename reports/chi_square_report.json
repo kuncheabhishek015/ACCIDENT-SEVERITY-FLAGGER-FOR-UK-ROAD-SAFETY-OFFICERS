@@ -1,0 +1,476 @@
+{
+  "overall_sample_size": 101525,
+  "prior_probability_severe": 0.2624,
+  "tests": {
+    "weather_conditions": {
+      "feature_name": "weather_conditions",
+      "feature_label": "weather_label",
+      "chi2_statistic": 321.548,
+      "p_value": 1.0601304956458314e-64,
+      "p_value_formatted": "< 0.0001",
+      "degrees_of_freedom": 8,
+      "n_samples": 101525,
+      "cramers_v": 0.0563,
+      "effect_size": "Negligible / Weak",
+      "is_statistically_significant": true,
+      "conclusion": "Statistically SIGNIFICANT association (p = 1.0601e-64, Cram\u00e9r's V = 0.0563).",
+      "contingency_table": {
+        "0": {
+          "Fine + high winds": 485,
+          "Fine no high winds": 61069,
+          "Fog or mist": 232,
+          "Other": 2625,
+          "Raining + high winds": 633,
+          "Raining no high winds": 7564,
+          "Snowing + high winds": 17,
+          "Snowing no high winds": 168,
+          "Unknown": 2088
+        },
+        "1": {
+          "Fine + high winds": 230,
+          "Fine no high winds": 22336,
+          "Fog or mist": 110,
+          "Other": 689,
+          "Raining + high winds": 247,
+          "Raining no high winds": 2666,
+          "Snowing + high winds": 2,
+          "Snowing no high winds": 67,
+          "Unknown": 297
+        }
+      },
+      "expected_frequencies": [
+        [
+          527.3569564146762,
+          187.64304358532382
+        ],
+        [
+          61516.37335631618,
+          21888.626643683823
+        ],
+        [
+          252.2462644668801,
+          89.75373553311992
+        ],
+        [
+          2444.2810539276043,
+          869.718946072396
+        ],
+        [
+          649.0547155872938,
+          230.94528441270623
+        ],
+        [
+          7545.26106870229,
+          2684.7389312977098
+        ],
+        [
+          14.013681359271116,
+          4.986318640728885
+        ],
+        [
+          173.3271115488796,
+          61.672888451120414
+        ],
+        [
+          1759.0857916769269,
+          625.9142083230731
+        ]
+      ],
+      "conditional_probabilities": [
+        {
+          "Category": "Fine + high winds",
+          "Total_Collisions": 715,
+          "Severe_Collisions": 230,
+          "P_Severe": 0.32167832167832167,
+          "P_Severe_Percent": 32.17,
+          "Slight_Collisions": 485
+        },
+        {
+          "Category": "Fine no high winds",
+          "Total_Collisions": 83405,
+          "Severe_Collisions": 22336,
+          "P_Severe": 0.26780169054613034,
+          "P_Severe_Percent": 26.78,
+          "Slight_Collisions": 61069
+        },
+        {
+          "Category": "Fog or mist",
+          "Total_Collisions": 342,
+          "Severe_Collisions": 110,
+          "P_Severe": 0.3216374269005848,
+          "P_Severe_Percent": 32.16,
+          "Slight_Collisions": 232
+        },
+        {
+          "Category": "Other",
+          "Total_Collisions": 3314,
+          "Severe_Collisions": 689,
+          "P_Severe": 0.207905853952927,
+          "P_Severe_Percent": 20.79,
+          "Slight_Collisions": 2625
+        },
+        {
+          "Category": "Raining + high winds",
+          "Total_Collisions": 880,
+          "Severe_Collisions": 247,
+          "P_Severe": 0.2806818181818182,
+          "P_Severe_Percent": 28.07,
+          "Slight_Collisions": 633
+        },
+        {
+          "Category": "Raining no high winds",
+          "Total_Collisions": 10230,
+          "Severe_Collisions": 2666,
+          "P_Severe": 0.2606060606060606,
+          "P_Severe_Percent": 26.06,
+          "Slight_Collisions": 7564
+        },
+        {
+          "Category": "Snowing + high winds",
+          "Total_Collisions": 19,
+          "Severe_Collisions": 2,
+          "P_Severe": 0.10526315789473684,
+          "P_Severe_Percent": 10.53,
+          "Slight_Collisions": 17
+        },
+        {
+          "Category": "Snowing no high winds",
+          "Total_Collisions": 235,
+          "Severe_Collisions": 67,
+          "P_Severe": 0.2851063829787234,
+          "P_Severe_Percent": 28.51,
+          "Slight_Collisions": 168
+        },
+        {
+          "Category": "Unknown",
+          "Total_Collisions": 2385,
+          "Severe_Collisions": 297,
+          "P_Severe": 0.12452830188679245,
+          "P_Severe_Percent": 12.45,
+          "Slight_Collisions": 2088
+        }
+      ]
+    },
+    "light_conditions": {
+      "feature_name": "light_conditions",
+      "feature_label": "light_label",
+      "chi2_statistic": 340.381,
+      "p_value": 2.0925768808240788e-72,
+      "p_value_formatted": "< 0.0001",
+      "degrees_of_freedom": 4,
+      "n_samples": 101509,
+      "cramers_v": 0.0579,
+      "effect_size": "Negligible / Weak",
+      "is_statistically_significant": true,
+      "conclusion": "Statistically SIGNIFICANT association (p = 2.0926e-72, Cram\u00e9r's V = 0.0579).",
+      "contingency_table": {
+        "0": {
+          "Darkness - lighting unknown": 1216,
+          "Darkness - lights lit": 15151,
+          "Darkness - lights unlit": 512,
+          "Darkness - no lighting": 3620,
+          "Daylight": 54370
+        },
+        "1": {
+          "Darkness - lighting unknown": 372,
+          "Darkness - lights lit": 5554,
+          "Darkness - lights unlit": 208,
+          "Darkness - no lighting": 2062,
+          "Daylight": 18444
+        }
+      },
+      "expected_frequencies": [
+        [
+          1171.2456235407699,
+          416.75437645923023
+        ],
+        [
+          15271.184279226472,
+          5433.815720773528
+        ],
+        [
+          531.0433557615581,
+          188.95664423844192
+        ],
+        [
+          4190.8171492182955,
+          1491.182850781704
+        ],
+        [
+          53704.709592252904,
+          19109.290407747096
+        ]
+      ],
+      "conditional_probabilities": [
+        {
+          "Category": "Darkness - lighting unknown",
+          "Total_Collisions": 1588,
+          "Severe_Collisions": 372,
+          "P_Severe": 0.23425692695214106,
+          "P_Severe_Percent": 23.43,
+          "Slight_Collisions": 1216
+        },
+        {
+          "Category": "Darkness - lights lit",
+          "Total_Collisions": 20705,
+          "Severe_Collisions": 5554,
+          "P_Severe": 0.2682443854141512,
+          "P_Severe_Percent": 26.82,
+          "Slight_Collisions": 15151
+        },
+        {
+          "Category": "Darkness - lights unlit",
+          "Total_Collisions": 720,
+          "Severe_Collisions": 208,
+          "P_Severe": 0.28888888888888886,
+          "P_Severe_Percent": 28.89,
+          "Slight_Collisions": 512
+        },
+        {
+          "Category": "Darkness - no lighting",
+          "Total_Collisions": 5682,
+          "Severe_Collisions": 2062,
+          "P_Severe": 0.36290038718761,
+          "P_Severe_Percent": 36.29,
+          "Slight_Collisions": 3620
+        },
+        {
+          "Category": "Daylight",
+          "Total_Collisions": 72814,
+          "Severe_Collisions": 18444,
+          "P_Severe": 0.2533029362485236,
+          "P_Severe_Percent": 25.33,
+          "Slight_Collisions": 54370
+        }
+      ]
+    },
+    "road_type": {
+      "feature_name": "road_type",
+      "feature_label": "road_type_label",
+      "chi2_statistic": 607.1315,
+      "p_value": 5.820557286706426e-129,
+      "p_value_formatted": "< 0.0001",
+      "degrees_of_freedom": 5,
+      "n_samples": 101525,
+      "cramers_v": 0.0773,
+      "effect_size": "Negligible / Weak",
+      "is_statistically_significant": true,
+      "conclusion": "Statistically SIGNIFICANT association (p = 5.8206e-129, Cram\u00e9r's V = 0.0773).",
+      "contingency_table": {
+        "0": {
+          "Dual carriageway": 11022,
+          "One way street": 1905,
+          "Roundabout": 5472,
+          "Single carriageway": 53443,
+          "Slip road": 1295,
+          "Unknown": 1744
+        },
+        "1": {
+          "Dual carriageway": 3588,
+          "One way street": 493,
+          "Roundabout": 1323,
+          "Single carriageway": 20707,
+          "Slip road": 324,
+          "Unknown": 209
+        }
+      },
+      "expected_frequencies": [
+        [
+          10775.783403102683,
+          3834.216596897316
+        ],
+        [
+          1768.6740999753756,
+          629.3259000246245
+        ],
+        [
+          5011.734991381433,
+          1783.2650086185668
+        ],
+        [
+          54690.235409997535,
+          19459.76459000246
+        ],
+        [
+          1194.11316424526,
+          424.8868357547402
+        ],
+        [
+          1440.45893129771,
+          512.5410687022901
+        ]
+      ],
+      "conditional_probabilities": [
+        {
+          "Category": "Dual carriageway",
+          "Total_Collisions": 14610,
+          "Severe_Collisions": 3588,
+          "P_Severe": 0.24558521560574947,
+          "P_Severe_Percent": 24.56,
+          "Slight_Collisions": 11022
+        },
+        {
+          "Category": "One way street",
+          "Total_Collisions": 2398,
+          "Severe_Collisions": 493,
+          "P_Severe": 0.20558798999165973,
+          "P_Severe_Percent": 20.56,
+          "Slight_Collisions": 1905
+        },
+        {
+          "Category": "Roundabout",
+          "Total_Collisions": 6795,
+          "Severe_Collisions": 1323,
+          "P_Severe": 0.1947019867549669,
+          "P_Severe_Percent": 19.47,
+          "Slight_Collisions": 5472
+        },
+        {
+          "Category": "Single carriageway",
+          "Total_Collisions": 74150,
+          "Severe_Collisions": 20707,
+          "P_Severe": 0.2792582602832097,
+          "P_Severe_Percent": 27.93,
+          "Slight_Collisions": 53443
+        },
+        {
+          "Category": "Slip road",
+          "Total_Collisions": 1619,
+          "Severe_Collisions": 324,
+          "P_Severe": 0.20012353304508956,
+          "P_Severe_Percent": 20.01,
+          "Slight_Collisions": 1295
+        },
+        {
+          "Category": "Unknown",
+          "Total_Collisions": 1953,
+          "Severe_Collisions": 209,
+          "P_Severe": 0.10701484895033282,
+          "P_Severe_Percent": 10.7,
+          "Slight_Collisions": 1744
+        }
+      ]
+    },
+    "junction_detail": {
+      "feature_name": "junction_detail",
+      "feature_label": "junction_label",
+      "chi2_statistic": 448.1555,
+      "p_value": 1.2243658669449088e-93,
+      "p_value_formatted": "< 0.0001",
+      "degrees_of_freedom": 6,
+      "n_samples": 94824,
+      "cramers_v": 0.0687,
+      "effect_size": "Negligible / Weak",
+      "is_statistically_significant": true,
+      "conclusion": "Statistically SIGNIFICANT association (p = 1.2244e-93, Cram\u00e9r's V = 0.0687).",
+      "contingency_table": {
+        "0": {
+          "Mini-roundabout or crossroads": 7150,
+          "More than 4 arms": 1105,
+          "Not at junction or within 20 metres": 32416,
+          "Other junction type": 5019,
+          "Private drive/entrance": 1557,
+          "T or staggered junction": 20938,
+          "Unknown": 1350
+        },
+        "1": {
+          "Mini-roundabout or crossroads": 2306,
+          "More than 4 arms": 399,
+          "Not at junction or within 20 metres": 12917,
+          "Other junction type": 1743,
+          "Private drive/entrance": 587,
+          "T or staggered junction": 7260,
+          "Unknown": 77
+        }
+      },
+      "expected_frequencies": [
+        [
+          6934.1407238673755,
+          2521.8592761326245
+        ],
+        [
+          1102.8920948283135,
+          401.10790517168647
+        ],
+        [
+          33242.95700455581,
+          12090.042995444192
+        ],
+        [
+          4958.614591242724,
+          1803.3854087572765
+        ],
+        [
+          1572.2078798616385,
+          571.7921201383616
+        ],
+        [
+          20677.76016620265,
+          7520.239833797351
+        ],
+        [
+          1046.4275394414917,
+          380.5724605585084
+        ]
+      ],
+      "conditional_probabilities": [
+        {
+          "Category": "Mini-roundabout or crossroads",
+          "Total_Collisions": 9456,
+          "Severe_Collisions": 2306,
+          "P_Severe": 0.2438663282571912,
+          "P_Severe_Percent": 24.39,
+          "Slight_Collisions": 7150
+        },
+        {
+          "Category": "More than 4 arms",
+          "Total_Collisions": 1504,
+          "Severe_Collisions": 399,
+          "P_Severe": 0.26529255319148937,
+          "P_Severe_Percent": 26.53,
+          "Slight_Collisions": 1105
+        },
+        {
+          "Category": "Not at junction or within 20 metres",
+          "Total_Collisions": 45333,
+          "Severe_Collisions": 12917,
+          "P_Severe": 0.2849359186464606,
+          "P_Severe_Percent": 28.49,
+          "Slight_Collisions": 32416
+        },
+        {
+          "Category": "Other junction type",
+          "Total_Collisions": 6762,
+          "Severe_Collisions": 1743,
+          "P_Severe": 0.2577639751552795,
+          "P_Severe_Percent": 25.78,
+          "Slight_Collisions": 5019
+        },
+        {
+          "Category": "Private drive/entrance",
+          "Total_Collisions": 2144,
+          "Severe_Collisions": 587,
+          "P_Severe": 0.2737873134328358,
+          "P_Severe_Percent": 27.38,
+          "Slight_Collisions": 1557
+        },
+        {
+          "Category": "T or staggered junction",
+          "Total_Collisions": 28198,
+          "Severe_Collisions": 7260,
+          "P_Severe": 0.2574650684445705,
+          "P_Severe_Percent": 25.75,
+          "Slight_Collisions": 20938
+        },
+        {
+          "Category": "Unknown",
+          "Total_Collisions": 1427,
+          "Severe_Collisions": 77,
+          "P_Severe": 0.0539593552908199,
+          "P_Severe_Percent": 5.4,
+          "Slight_Collisions": 1350
+        }
+      ]
+    }
+  }
+}
