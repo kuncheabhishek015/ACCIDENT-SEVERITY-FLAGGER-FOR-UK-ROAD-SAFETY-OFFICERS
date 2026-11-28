@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="claude">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Road Safety Intelligence — STATS19 Collision Severity Flagger &amp; Interventions</title>
+  <!-- Google Fonts & Plotly.js -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <link rel="stylesheet" href="css/style.css?v=20261126_4">
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       VIEW 1: PUBLIC LANDING PAGE (Clean, Scholarly Claude Editorial Layout)
+       ======================================================================== -->
+  <div id="view-landing-page">
+    <div class="app-bezel-frame">
+      <!-- Clean Editorial Hero Container -->
+      <section class="cinematic-hero-container">
+        <!-- Top Floating Navigation Bar -->
+        <header class="cinematic-nav">
+          <a href="#" class="cinematic-logo">
+            <div class="cinematic-logo-icon">🛡️</div>
+            <span>VISION ZERO <span
+                style="font-size:0.75rem; color:var(--accent-primary); font-family:var(--font-mono)">UK</span></span>
+          </a>
+
+          <nav class="cinematic-menu-pills" aria-label="Portal Navigation">
+            <button type="button" class="cinematic-menu-item active"
+              onclick="window.scrollTo({top:0, behavior:'smooth'})">Home</button>
+            <button type="button" class="cinematic-menu-item"
+              onclick="document.getElementById('section-public-awareness').scrollIntoView({behavior:'smooth'})">Public
+              Guidance</button>
+            <button type="button" class="cinematic-menu-item"
+              onclick="document.getElementById('section-intervention-matrix').scrollIntoView({behavior:'smooth'})">Intervention
+              Matrix</button>
+          </nav>
+
+          <button type="button" class="btn-cinematic-cta" id="hero-top-join-btn" onclick="showView('dashboard')"
+            title="Direct Access to Road Safety Officer Intelligence Portal">
+            <span>&gt;&gt;</span>
+            <span>OFFICER PORTAL</span>
+          </button>
+        </header>
+
+        <!-- Center Hero Typography (Adjusted Higher & Complete) -->
+        <div class="cinematic-hero-center">
+          <div class="hero-eyebrow-badge">
+            <span class="eyebrow-dot">✦</span> OFFICIAL DfT STATS19 CASUALTY PREVENTION BENCHMARK
+          </div>
+          <h1 class="cinematic-hero-title">
+            UK ROAD SAFETY<br>
+            INTELLIGENCE
+          </h1>
+          <p class="cinematic-hero-subtitle">
+            Predictive collision severity classification &amp; proactive council safety interventions.
+          </p>
+          <div class="hero-action-buttons">
+            <button type="button" class="btn btn-primary hero-btn-main" onclick="showView('dashboard')">
+              <span>ENTER OFFICER PORTAL →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         SECTION 2: PUBLIC EDUCATIONAL AWARENESS ("Telling the People")
+         Detailed, Structured, Actionable Road Safety Guidance
+         ======================================================================== -->
+    <section class="public-awareness-section" id="section-public-awareness"
+      style="max-width: 1560px; margin: 3.5rem auto; padding: 0 1.5rem;">
+      <div style="text-align: center; max-width: 850px; margin: 0 auto 1.5rem;">
+        <span class="section-badge-pill">📊 STATS19 EMPIRICAL EVIDENCE &amp; GUIDANCE</span>
+        <h2 class="section-main-title">Road Safety Facts &amp; Proven Council Interventions</h2>
+        <p class="section-main-desc">
+          Derived from 101,525 verified police collision records across Great Britain. Understand primary hazard drivers
+          and how proactive highway engineering prevents fatal casualties.
+        </p>
+      </div>
+
+      <!-- 6 High-Impact Structured Awareness Cards -->
+      <div class="public-awareness-grid">
+        <!-- Card 1: Streetlighting -->
+        <div class="awareness-card">
+          <div class="awareness-card-header-row">
+            <span class="awareness-card-icon">💡</span>
+            <span class="awareness-kpi-badge">3.2x Severity Multiplier</span>
+          </div>
+          <h3>1. Unlit Darkness &amp; Streetlighting</h3>
+          <ul class="awareness-bullet-list">
+            <li><strong>The Hazard:</strong> Unlit rural darkness reduces driver sightline to under 18 meters, cutting
+              reaction time by 65%.</li>
+            <li><strong>Council Engineering Fix:</strong> Install high-output 4000K solar LED luminaires and solar
+              reflective cat's eyes.</li>
+            <li><strong>Driver Takeaway:</strong> Never overdrive your headlight beam; dip within 200m of oncoming
+              vehicles.
+            </li>
+          </ul>
+          <div class="awareness-card-stat">
+            Council Target: Priority illumination for unlit carriageway bends.
+          </div>
+        </div>
+
+        <!-- Card 2: Wet Surface & HFST -->
+        <div class="awareness-card">
+          <div class="awareness-card-header-row">
+            <span class="awareness-card-icon">🌧️</span>
+            <span class="awareness-kpi-badge">2.1x Skidding Rate</span>
+          </div>
+          <h3>2. Wet Asphalt &amp; Anti-Skid Grip</h3>
+          <ul class="awareness-bullet-list">
+            <li><strong>The Hazard:</strong> Rainwater creates a micro-film causing tire aquaplaning, halving friction
+              from
+              &mu; = 0.72 to &mu; = 0.35.</li>
+            <li><strong>Council Engineering Fix:</strong> Apply High-Friction Surface Treatment (HFST) resin dressing +
+              clearance of drainage gullies.</li>
+            <li><strong>Driver Takeaway:</strong> Double following headway to at least 4 seconds; steer gently if wheels
+              aquaplane.</li>
+          </ul>
+          <div class="awareness-card-stat">
+            Council Target: HFST resurfacing at approach zones to roundabouts and signals.
+          </div>
+        </div>
+
+        <!-- Card 3: Speed Lethality -->
+        <div class="awareness-card">
+          <div class="awareness-card-header-row">
+            <span class="awareness-card-icon">⚡</span>
+            <span class="awareness-kpi-badge">4x Kinetic Energy</span>
+          </div>
+          <h3>3. Kinetic Energy &amp; Speed Curvature</h3>
+          <ul class="awareness-bullet-list">
+            <li><strong>The Hazard:</strong> Kinetic energy quadruples when speed doubles (E = &frac12;mv&sup2;). 60 mph
+              impacts are 2.4x more lethal than 30 mph.</li>
+            <li><strong>Council Engineering Fix:</strong> Deploy Average Speed Cameras (SPECS) corridors and
+              Vehicle-Activated Speed (VAS) signs.</li>
+            <li><strong>Driver Takeaway:</strong> Speed limits are statutory ceilings, not safety targets in rain or
+              darkness.</li>
+          </ul>
+          <div class="awareness-card-stat">
+            Council Target: Continuous speed moderation corridors on rural single carriageways.
+          </div>
+        </div>
+
+        <!-- Card 4: Junction Conflicts -->
+        <div class="awareness-card">
+          <div class="awareness-card-header-row">
+            <span class="awareness-card-icon">🛑</span>
+            <span class="awareness-kpi-badge">62.4% Collision Share</span>
+          </div>
+          <h3>4. Junctions &amp; Staggered Turning Conflicts</h3>
+          <ul class="awareness-bullet-list">
+            <li><strong>The Hazard:</strong> T-Junctions and crossroads produce severe right-angle T-bone impacts due to
+              restricted sightlines.</li>
+            <li><strong>Council Engineering Fix:</strong> Convert priority junctions into compact mini-roundabouts and
+              prune
+              obscuring vegetation.</li>
+            <li><strong>Driver Takeaway:</strong> Execute a double "Look Twice for Bikes" sweep before crossing oncoming
+              traffic.</li>
+          </ul>
+          <div class="awareness-card-stat">
+            Council Target: Roundabout conversions at high-severity collision blackspots.
+          </div>
+        </div>
+
+        <!-- Card 5: Fog Obscuration -->
+        <div class="awareness-card">
+          <div class="awareness-card-header-row">
+            <span class="awareness-card-icon">🌫️</span>
+            <span class="awareness-kpi-badge">Multi-Car Pileups</span>
+          </div>
+          <h3>5. Fog Obscuration &amp; Spatial Disorientation</h3>
+          <ul class="awareness-bullet-list">
+            <li><strong>The Hazard:</strong> Dense fog creates visual deception of distance, leading drivers to tailgate
+              at
+              high speeds until impact.</li>
+            <li><strong>Council Engineering Fix:</strong> Variable Message Signs (VMS) with automated radar speed
+              warnings
+              during fog events.</li>
+            <li><strong>Driver Takeaway:</strong> Use dedicated fog lights; disengage cruise control immediately in mist
+              or
+              fog.</li>
+          </ul>
+          <div class="awareness-card-stat">
+            Council Target: Automated VMS advisory gantries on trunk corridors.
+          </div>
+        </div>
+
+        <!-- Card 6: Pedestrian & School Zones -->
+        <div class="awareness-card">
+          <div class="awareness-card-header-row">
+            <span class="awareness-card-icon">🚶</span>
+            <span class="awareness-kpi-badge">85% Survival at 20 mph</span>
+          </div>
+          <h3>6. Vulnerable Road Users &amp; 20 mph Zones</h3>
+          <ul class="awareness-bullet-list">
+            <li><strong>The Hazard:</strong> Pedestrian survival drops from 85% at 20 mph to below 15% at 40 mph vehicle
+              impact speed.</li>
+            <li><strong>Council Engineering Fix:</strong> Establish 20 mph school safety zones, raised pedestrian
+              tables,
+              and high-visibility zebra crossings.</li>
+            <li><strong>Driver Takeaway:</strong> Scan footpaths and anticipate pedestrian crossings around bus stops
+              and
+              school gates.</li>
+          </ul>
+          <div class="awareness-card-stat">
+            Council Target: 20 mph school perimeter calming and raised crossings.
+          </div>
+        </div>
+      </div>
+
+      <!-- Proven Council Engineering Intervention Matrix Table -->
+      <div class="card" id="section-intervention-matrix" style="margin-top: 2.5rem;">
+        <div class="card-header">
+          <h2>Council Road Safety Intervention Matrix</h2>
+          <p>Comparative effectiveness of highway engineering countermeasures against primary STATS19 collision risk
+            factors.</p>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Primary Road Hazard</th>
+                <th>STATS19 Relative Risk</th>
+                <th>Proven Council Engineering Countermeasure</th>
+                <th>Expected Casualty Reduction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Unlit Rural Darkness</strong></td>
+                <td><span style="color:#C24134; font-weight:700;">3.2x Fatal Multiplier</span></td>
+                <td>High-Mast 4000K Solar LED Streetlights + Solar Cat's Eyes</td>
+                <td><span style="color:#2E7D56; font-weight:700;">-42% Night Casualties</span></td>
+              </tr>
+              <tr>
+                <td><strong>Wet / Icy Road Surface</strong></td>
+                <td><span style="color:#C24134; font-weight:700;">2.1x Skidding Frequency</span></td>
+                <td>High-Friction Surface Treatment (HFST) Resin &amp; Drainage Clearing</td>
+                <td><span style="color:#2E7D56; font-weight:700;">-50% Wet Skid Accidents</span></td>
+              </tr>
+              <tr>
+                <td><strong>60 mph Single Carriageway</strong></td>
+                <td><span style="color:#C24134; font-weight:700;">2.4x Lethality vs 30 mph</span></td>
+                <td>Average Speed Enforcement Cameras (SPECS) &amp; Gateway Signs</td>
+                <td><span style="color:#2E7D56; font-weight:700;">-35% Severe Casualties</span></td>
+              </tr>
+              <tr>
+                <td><strong>Priority T-Junctions / Crossroads</strong></td>
+                <td><span style="color:#B5742A; font-weight:700;">62.4% National Share</span></td>
+                <td>Mini-Roundabout Conversion &amp; Sightline Vegetation Pruning</td>
+                <td><span style="color:#2E7D56; font-weight:700;">-45% Right-Turn Collisions</span></td>
+              </tr>
+              <tr>
+                <td><strong>High-Speed Highway Tailgating</strong></td>
+                <td><span style="color:#B5742A; font-weight:700;">Pileup Hazard</span></td>
+                <td>Variable Message Signs (VMS) with Automated Radar Fog Warnings</td>
+                <td><span style="color:#2E7D56; font-weight:700;">-38% Fog Pileups</span></td>
+              </tr>
+              <tr>
+                <td><strong>Urban Residential &amp; School Zones</strong></td>
+                <td><span style="color:#C24134; font-weight:700;">Severe Child Vulnerability</span></td>
+                <td>20 mph Speed Limit Zones, Raised Zebra Tables &amp; Chicanes</td>
+                <td><span style="color:#2E7D56; font-weight:700;">-60% Pedestrian Fatalities</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="app-footer">
+      <p>UK Road Safety Officer Flagger Project | Academic Semester Project | DfT STATS19 Open Data</p>
+    </footer>
+  </div>
+
+  <!-- ========================================================================
+       VIEW 2: MAIN ROAD SAFETY OFFICER DASHBOARD
+       ======================================================================== -->
+  <div id="view-dashboard-page" style="display: none;">
+    <!-- Modern Header / Action Bar -->
+    <header class="app-header">
+      <div class="header-container">
+        <div class="brand" onclick="showView('landing')" style="cursor: pointer;"
+          title="← Return to Public Landing Page">
+          <div class="brand-icon-wrapper">
+            <span>🛡️</span>
+          </div>
+          <div>
+            <h1>UK Road Safety Officer Flagger <span class="brand-badge">STATS19 AI</span></h1>
+            <p class="subtitle brand-return-hint">← Return to Public Overview</p>
+          </div>
+        </div>
+
+        <!-- Header Action Toolbar -->
+        <div class="header-actions">
+          <!-- Theme Selector -->
+          <select id="theme-selector" class="theme-select" title="Change Visual UI Theme">
+            <option value="claude" selected>🏛️ Claude Warm (Default)</option>
+            <option value="claude-dark">☕ Claude Dark</option>
+            <option value="titanium">✨ Titanium Glass</option>
+            <option value="cyber">⚡ Cyber Command</option>
+            <option value="emerald">🛡️ Emerald Safety</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Application Container -->
+    <main class="main-container">
+      <!-- Floating Segmented Navigation Tabs -->
+      <div class="tab-navigation-wrapper">
+        <nav class="tab-navigation" aria-label="Dashboard Tabs">
+          <button class="tab-btn active" data-tab="risk-evaluator">🎯 Risk Evaluator &amp; Simulator</button>
+          <button class="tab-btn" data-tab="priority-shortlist">📋 Council Shortlist (Top K)</button>
+          <button class="tab-btn" data-tab="eda-gallery">📈 EDA &amp; Publication Plots</button>
+          <button class="tab-btn" data-tab="statistical-insights">📊 Chi-Square Statistics</button>
+          <button class="tab-btn" data-tab="model-benchmarks">🧠 ML Model Benchmarks</button>
+          <button class="tab-btn" data-tab="audit-logs">📜 SQL Query Audit Logs</button>
+        </nav>
+      </div>
+
+      <!-- TAB 1: Risk Evaluator, Simulator & Input Form -->
+      <div id="risk-evaluator" class="tab-content active">
+        <!-- Quick Scenario Presets -->
+        <div class="presets-container">
+          <div class="presets-label">
+            <span>⚡ Quick Scenario Presets:</span>
+          </div>
+          <div class="presets-chips">
+            <button type="button" class="preset-chip" data-preset="rural_wet">
+              <span>🌧️</span> <strong>Rural Wet Carriageway</strong> (60 mph, Darkness)
+            </button>
+            <button type="button" class="preset-chip" data-preset="night_city">
+              <span>🌃</span> <strong>Night City T-Junction</strong> (30 mph, Lit)
+            </button>
+            <button type="button" class="preset-chip" data-preset="fog_motorway">
+              <span>🌫️</span> <strong>Foggy Dawn Motorway</strong> (70 mph, Low Visibility)
+            </button>
+            <button type="button" class="preset-chip" data-preset="ice_roundabout">
+              <span>❄️</span> <strong>Icy Suburban Roundabout</strong> (20 mph, Snow)
+            </button>
+            <button type="button" class="preset-chip" data-preset="clear_dual">
+              <span>☀️</span> <strong>Clear Dual Carriageway</strong> (50 mph, Daylight)
+            </button>
+          </div>
+        </div>
+
+        <div class="grid-layout">
+          <!-- Input Form Section: Road Conditions Evaluator -->
+          <div class="card form-card">
+            <div class="card-header flex-between">
+              <div>
+                <h2>Road Conditions Evaluator</h2>
+                <p>Configure environmental and highway parameters to quantify collision casualty severity risk.</p>
+              </div>
+              <div id="active-model-name" class="active-model-badge">Logistic Regression</div>
+            </div>
+
+            <!-- Active Evaluated Conditions Summary Strip -->
+            <div class="conditions-summary-strip" id="conditions-summary-strip">
+              <span class="summary-pill" id="summary-speed">⚡ 30 MPH</span>
+              <span class="summary-pill" id="summary-type">🛣️ Single Carriageway</span>
+              <span class="summary-pill" id="summary-weather">🌤️ Fine / Clear</span>
+              <span class="summary-pill" id="summary-light">☀️ Daylight</span>
+              <span class="summary-pill" id="summary-junction">🛑 T-Junction</span>
+            </div>
+
+            <form id="risk-form" onsubmit="event.preventDefault(); evaluateRisk(); return false;">
+              <div class="form-group" style="display: none;" id="model-select-group">
+                <label for="model_select">Serving ML Model</label>
+                <select id="model_select"></select>
+              </div>
+
+              <div class="form-group">
+                <label for="road_type">Road Type</label>
+                <select id="road_type" required></select>
+              </div>
+
+              <div class="form-group">
+                <label for="junction_detail">Junction Type</label>
+                <select id="junction_detail" required></select>
+              </div>
+
+              <div class="form-group">
+                <label for="weather_conditions">Weather Condition</label>
+                <select id="weather_conditions" required></select>
+              </div>
+
+              <div class="form-group">
+                <label for="light_conditions">Light Condition</label>
+                <select id="light_conditions" required></select>
+              </div>
+
+              <div class="form-group">
+                <label for="speed_limit">Speed Limit</label>
+                <select id="speed_limit" required></select>
+              </div>
+
+              <button type="button" class="btn btn-primary" id="evaluate-btn" onclick="evaluateRisk()">
+                ⚡ Evaluate Collision Risk
+              </button>
+            </form>
+          </div>
+
+          <!-- Output Assessment Results Panel -->
+          <div class="card results-card" id="results-panel">
+            <div class="card-header flex-between">
+              <div>
+                <h2>Risk Assessment Telemetry</h2>
+                <p>Predictive severity classification &amp; Bayesian historical evidence.</p>
+              </div>
+              <span class="badge" id="risk-badge" style="background: rgba(46, 125, 86, 0.15); color: #2E7D56; border: 1px solid #2E7D56;">Zero Risk (0%)</span>
+            </div>
+
+            <div class="gauge-container">
+              <div id="gauge-chart" style="width: 100%; height: 220px;"></div>
+            </div>
+
+            <!-- Decoded Summary & Multiplier -->
+            <div class="risk-stats-grid">
+              <div class="stat-box">
+                <span class="stat-label">Predicted Risk Score</span>
+                <span class="stat-value" id="risk-score-value" style="color: #2E7D56;">0.00%</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Bayesian Risk Multiplier</span>
+                <span class="stat-value" id="risk-multiplier-value">0.00x</span>
+              </div>
+            </div>
+
+            <!-- Historical Evidence Section -->
+            <div class="evidence-section">
+              <h3>Historical Collision Evidence (STATS19)</h3>
+              <div class="evidence-grid">
+                <div class="evidence-item">
+                  <span class="ev-num" id="ev-total">0</span>
+                  <span class="ev-lbl">Total Collisions</span>
+                </div>
+                <div class="evidence-item severe-item">
+                  <span class="ev-num" id="ev-severe">0</span>
+                  <span class="ev-lbl">Severe (Fatal/Serious)</span>
+                </div>
+                <div class="evidence-item">
+                  <span class="ev-num" id="ev-rate">0.00%</span>
+                  <span class="ev-lbl">Historical Severe Rate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Council Safety Prescription (Cause & Fix Engine) -->
+            <div class="evidence-section prescription-card" id="prescription-card">
+              <div class="flex-between" style="margin-bottom: 0.75rem;">
+                <h3 style="margin-bottom: 0;">🛠️ Council Safety Prescription (Actionable Fix)</h3>
+                <span class="badge" id="prescription-badge" style="background:#EDF7F1; color:#2E7D56;">🟢 Ready / Baseline Zero</span>
+              </div>
+              <div id="prescription-items-list" class="prescription-list">
+                <div class="prescription-item">
+                  <div class="prescription-item-top">
+                    <span class="p-icon">🛡️</span>
+                    <strong class="p-hazard">Ready for Evaluation</strong>
+                    <span class="p-drop-badge">Baseline Zero</span>
+                  </div>
+                  <p class="p-action">Configure road, weather, light, and junction parameters, then click <strong>"⚡ Evaluate Collision Risk"</strong> to compute casualty severity risk.</p>
+                </div>
+              </div>
+              <button type="button" class="btn btn-secondary btn-simulate-fix" id="btn-simulate-fix"
+                style="width: 100%; margin-top: 0.85rem; display: none;"
+                title="Automatically apply safety interventions and evaluate risk drop">
+                <span>✨ Simulate Council Safety Fix (Mitigate Risk)</span>
+              </button>
+            </div>
+
+            <!-- SHAP Factor Breakdown -->
+            <div class="shap-section">
+              <h3>Top Risk Factor Contributions (SHAP)</h3>
+              <ul id="shap-list" class="shap-list">
+                <li class="empty-state">Configure parameters and click "⚡ Evaluate Collision Risk" to inspect explainability factors.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Council Shortlist (Top K) -->
+      <div id="priority-shortlist" class="tab-content">
+        <div class="card">
+          <div class="card-header flex-between">
+            <div>
+              <h2>Prioritized Road Safety Interventions Shortlist</h2>
+              <p>Ranked shortlist of high-risk road/weather/light conditions for council budget allocation ($K$
+                interventions/year).</p>
+            </div>
+            <div class="budget-control-group">
+              <div class="budget-control">
+                <label for="k-slider">Intervention Budget (K): <strong id="k-value">25</strong></label>
+                <input type="range" id="k-slider" min="5" max="50" value="25">
+              </div>
+              <button class="btn btn-secondary" id="export-csv-btn">📥 Export to CSV</button>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="shortlist-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Road Type</th>
+                  <th>Weather</th>
+                  <th>Light</th>
+                  <th>Speed Limit</th>
+                  <th>Historical Collisions</th>
+                  <th>Severe Count</th>
+                  <th>Severe Risk Rate</th>
+                  <th>Risk Multiplier</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: EDA & Publication Plots -->
+      <div id="eda-gallery" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h2>Exploratory Data Analysis (EDA) &amp; Publication Charts</h2>
+            <p>Statistical distribution figures generated from 101,525 DfT STATS19 collision records using Matplotlib
+              &amp; Seaborn.</p>
+          </div>
+
+          <div class="eda-gallery-grid">
+            <div class="eda-card">
+              <div class="eda-card-header">
+                <h3>1. STATS19 Collision Severity Distribution</h3>
+                <span class="badge badge-dataset">3-Class vs. Binary Target</span>
+              </div>
+              <div class="eda-image-container">
+                <img src="/reports/visualizations/severity_distribution.png" alt="Collision Severity Distribution"
+                  class="eda-plot-img">
+              </div>
+              <div class="eda-caption">
+                <p><strong>Key Insight:</strong> High-severity collisions (Fatal + Serious) constitute
+                  <strong>26.2%</strong> of all incidents, representing significant class imbalance compared to slight
+                  incidents (73.8%).
+                </p>
+              </div>
+            </div>
+
+            <div class="eda-card">
+              <div class="eda-card-header">
+                <h3>2. Weather vs. Light Environmental Risk Heatmap</h3>
+                <span class="badge badge-dataset">Severe Collision Rate Matrix (%)</span>
+              </div>
+              <div class="eda-image-container">
+                <img src="/reports/visualizations/weather_light_heatmap.png" alt="Weather and Light Risk Heatmap"
+                  class="eda-plot-img">
+              </div>
+              <div class="eda-caption">
+                <p><strong>Key Insight:</strong> Darkness without street lighting combined with inclement weather
+                  (snow/rain with high winds) drives severe collision rates upward to <strong>40%+</strong>, verified by
+                  &chi;<sup>2</sup> significance.</p>
+              </div>
+            </div>
+
+            <div class="eda-card">
+              <div class="eda-card-header">
+                <h3>3. Speed Limit Collision Volume vs. Severity Rate Curve</h3>
+                <span class="badge badge-dataset">Volume vs. Lethality Dual-Axis</span>
+              </div>
+              <div class="eda-image-container">
+                <img src="/reports/visualizations/speed_limit_risk_distribution.png" alt="Speed Limit Risk Distribution"
+                  class="eda-plot-img">
+              </div>
+              <div class="eda-caption">
+                <p><strong>Key Insight:</strong> While 30 mph roads experience the highest raw collision count (~60k),
+                  60 mph and 70 mph rural carriageways yield exponentially higher severe casualty proportions (&gt;38%).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Chi-Square Statistics -->
+      <div id="statistical-insights" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h2>Chi-Square Test of Independence (&chi;<sup>2</sup>)</h2>
+            <p>Testing statistical independence between collision severity and environmental factors (Weather &amp;
+              Light conditions).</p>
+          </div>
+
+          <div class="stats-cards-row" id="chi-summary-cards">
+            <!-- Summary cards rendered by JS -->
+          </div>
+
+          <div class="chi-charts-grid">
+            <div class="card chart-subcard">
+              <h3>Weather Conditions Contingency Table &amp; Risk Rates</h3>
+              <div id="weather-chart" style="width: 100%; height: 380px;"></div>
+            </div>
+            <div class="card chart-subcard">
+              <h3>Light Conditions Contingency Table &amp; Risk Rates</h3>
+              <div id="light-chart" style="width: 100%; height: 380px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: ML Model Benchmarks -->
+      <div id="model-benchmarks" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <h2>Machine Learning Models vs. Non-ML Baselines Benchmark</h2>
+            <p>Evaluation using Precision@K and Recall@K ($K=25$) alongside ROC-AUC and 95% Bootstrapped Confidence
+              Intervals.</p>
+          </div>
+
+          <div id="benchmark-chart" style="width: 100%; height: 360px; margin-bottom: 2rem;"></div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="models-table">
+              <thead>
+                <tr>
+                  <th>Model Name</th>
+                  <th>ROC-AUC</th>
+                  <th>Precision@25</th>
+                  <th>Precision@25 (95% CI)</th>
+                  <th>Recall@25</th>
+                  <th>Recall@25 (95% CI)</th>
+                  <th>F1-Score</th>
+                  <th>Accuracy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: SQL Query Audit Logs -->
+      <div id="audit-logs" class="tab-content">
+        <div class="card">
+          <div class="card-header flex-between">
+            <div>
+              <h2>SQL Database Query Audit Logs</h2>
+              <p>SQLite logging record of all queries executed by council road safety officers.</p>
+            </div>
+            <button class="btn btn-secondary" id="refresh-logs-btn">🔄 Refresh Logs</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="logs-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Timestamp</th>
+                  <th>Road Type</th>
+                  <th>Junction</th>
+                  <th>Weather</th>
+                  <th>Light</th>
+                  <th>Speed Limit</th>
+                  <th>Predicted Risk</th>
+                  <th>Category</th>
+                  <th>Matches</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>Academic Project Document — Accident Severity Flagger for UK Road Safety Officers | Student: Kunche Abhishek
+      </p>
+    </footer>
+  </div>
+
+  <!-- ========================================================================
+       OFFICER LOGIN CREDENTIALS MODAL (With Quick-Fill Demo Roles)
+       ======================================================================== -->
+  <div id="login-modal-overlay" class="login-modal-overlay" style="display: none;">
+    <div class="login-modal-card">
+      <div class="login-modal-header">
+        <div>
+          <h2>Officer Authentication Portal</h2>
+          <p>Sign in to access live road risk flagging and council intervention shortlisting.</p>
+        </div>
+        <button type="button" class="login-modal-close" id="login-modal-close"
+          onclick="AuthPortal.closeLoginModal()">&times;</button>
+      </div>
+
+      <div class="login-modal-body">
+        <!-- Quick 1-Click Demo Account Roles -->
+        <div class="demo-accounts-section">
+          <div class="demo-accounts-label">
+            <span>⚡ 1-Click Demo Quick-Fill Roles:</span>
+          </div>
+          <div class="demo-accounts-grid">
+            <button type="button" class="demo-account-chip" data-account="officer" title="Click to fill credentials">
+              <span class="chip-role">🛡️ Senior Safety Officer</span>
+              <span class="chip-email">officer@dft.gov.uk</span>
+            </button>
+            <button type="button" class="demo-account-chip" data-account="planner" title="Click to fill credentials">
+              <span class="chip-role">🏛️ Council Planner</span>
+              <span class="chip-email">planner@council.gov.uk</span>
+            </button>
+            <button type="button" class="demo-account-chip" data-account="scientist" title="Click to fill credentials">
+              <span class="chip-role">🔬 Lead ML Auditor</span>
+              <span class="chip-email">scientist@stats19.uk</span>
+            </button>
+            <button type="button" class="demo-account-chip" data-account="guest" title="Click to fill credentials">
+              <span class="chip-role">👤 Public Observer</span>
+              <span class="chip-email">guest@roadsafety.org</span>
+            </button>
+          </div>
+        </div>
+
+        <form id="officer-login-form">
+          <div class="login-input-group">
+            <label for="login-email">Official Email Address</label>
+            <input type="email" id="login-email" class="login-input" placeholder="e.g., officer@dft.gov.uk"
+              value="officer@dft.gov.uk" required>
+          </div>
+
+          <div class="login-input-group">
+            <label for="login-password">Access Passcode</label>
+            <input type="password" id="login-password" class="login-input" placeholder="Enter password"
+              value="safety2026" required>
+          </div>
+
+          <div id="login-status-msg" style="margin-bottom: 1rem; font-size: 0.88rem; min-height: 20px;"></div>
+
+          <button type="submit" class="btn-login-submit" id="login-submit-btn">
+            Authenticate &amp; Enter Portal &rarr;
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modular Scripts -->
+  <script src="js/sound_fx.js?v=20261126_4"></script>
+  <script src="js/auth.js?v=20261126_4"></script>
+  <script src="js/dataset_bundle.js?v=20261126_4"></script>
+  <script src="js/app.js?v=20261126_4"></script>
+</body>
+
+</html>
